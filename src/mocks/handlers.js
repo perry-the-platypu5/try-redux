@@ -4,6 +4,7 @@ export const handlers = [
   http.get('https://pokeapi.co/api/v2/pokemon', () => {
     console.log('Captured a "GET /pokemon" request')
     // return passthrough()
+    // return new HttpResponse(null, {status:404});
     return HttpResponse.json({
       "count": 1302,
       "next": "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20",

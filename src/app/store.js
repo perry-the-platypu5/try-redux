@@ -10,3 +10,14 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api.middleware),
 });
+
+export const setupStore = () => {
+    return configureStore({
+      reducer: {
+        counter: counterSlice,
+        [api.reducerPath]: api.reducer,
+    },    
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(api.middleware),
+    })
+  }
